@@ -1,0 +1,12 @@
+function skeleton = skeletize(image, strel)
+k = 1;
+
+while (min(min(Sk(:, :, k) == zeros(size(image)))) ~= 1)
+    kErodedImage = kErosionFunc(image, strel, padd, k-1)
+    Sk(:, :, k) = kErodedImage & ~openingFunc(kErodedImage, strel, 0);
+    
+end
+
+
+
+end
